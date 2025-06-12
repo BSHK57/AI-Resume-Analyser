@@ -89,9 +89,3 @@ resume-analyzer/
 6.  Open your web browser and navigate to `http://127.0.0.1:5000/`.
 
 ---
-
-### 📝 Notes:
-
-*   The `uploads/` directory is used for temporary storage of resumes. It's recommended to add this directory to your `.gitignore` file if it's not already.
-*   The AI-generated summaries depend on the Google Gemini API. Ensure you have a valid API key.
-*   The scoring mechanism uses TF-IDF and cosine similarity. Preprocessing steps like stopword removal and lemmatization are applied to improve relevance.
