@@ -4,6 +4,7 @@ docx2txt>=0.8
 scikit-learn>=1.0
 google-generativeai>=0.3.0 # For Google Gemini
 nltk>=3.6.0 # For text preprocessing
+gunicorn
 dotenv
 spacy # spaCy was mentioned in the tech stack, though not used in the current scorer. Include for completeness.
 # Consider adding specific versions for all packages based on development environment

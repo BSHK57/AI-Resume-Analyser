@@ -1,4 +1,3 @@
 .env
 uploads
 utils/__pycache__
-.gitignore
