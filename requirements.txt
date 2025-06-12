@@ -1,0 +1,19 @@
+Flask>=2.0
+pdfplumber>=0.7.0
+docx2txt>=0.8
+scikit-learn>=1.0
+google-generativeai>=0.3.0 # For Google Gemini
+nltk>=3.6.0 # For text preprocessing
+dotenv
+spacy # spaCy was mentioned in the tech stack, though not used in the current scorer. Include for completeness.
+# Consider adding specific versions for all packages based on development environment
+# For example:
+# Flask==2.3.2
+# pdfplumber==0.10.3
+# docx2txt==0.8
+# scikit-learn==1.3.0
+# google-generativeai==0.3.1
+# nltk==3.8.1
+# spacy==3.6.1
+# Example spacy model:
+# en_core_web_sm (can be installed via: python -m spacy download en_core_web_sm)

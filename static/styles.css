@@ -1,0 +1,48 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6; /* A light gray background for a softer look */
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    margin-bottom: 20px; /* Add some space below the navbar */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add a subtle shadow to cards */
+    border: none; /* Remove default border if using shadow */
+}
+
+.card-header h5 {
+    margin-bottom: 0; /* Align items better in card header */
+}
+
+.summary-content {
+    background-color: #ffffff; /* Ensure summary content has a white background */
+    white-space: pre-wrap; /* Respect newlines and spaces in the summary text */
+    font-size: 0.95em;
+    color: #454545; /* Slightly softer text color for summary */
+}
+
+.badge-info {
+    background-color: #17a2b8; /* Standard Bootstrap info color, ensure consistency */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.footer {
+    padding: 20px 0;
+    margin-top: 40px; /* Ensure space above the footer */
+    border-top: 1px solid #e7e7e7; /* Add a subtle top border to the footer */
+}
+
+/* Optional: Style for the file input to make it look a bit better */
+.form-control-file {
+    border: 1px solid #ced4da;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
