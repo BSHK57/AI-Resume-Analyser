@@ -26,9 +26,6 @@ This project is a Flask-based web application designed to analyze resumes agains
     *   Google Gemini API (e.g., gemini-pro) for summary generation.
     *   `pdfplumber` for parsing PDF files.
     *   `docx2txt` for parsing DOCX files.
-    *   (`spacy` is included in `requirements.txt` for potential future use).
-*   **File Uploads**: Handled via Flask and stored temporarily in an `uploads/` directory.
-
 ---
 
 ### 📂 Project Structure:
