@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request#, Markup # Added Markup
 from markupsafe import Markup
-from utils.llm_summary import generate_summary
+from utils.llm_summary import generate_summary,get_score
 from utils.resume_parser import extract_text
 import os
 import re # For a more robust nl2br
+import io
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads/'
@@ -28,25 +29,22 @@ def index():
         jd = request.form['job_description']
         files = request.files.getlist('resumes')
 
-        if not os.path.exists(UPLOAD_FOLDER):
-            os.makedirs(UPLOAD_FOLDER)
-
         for file in files:
             if file and file.filename: # Ensure file exists and has a filename
-                filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-                file.save(filepath)
-                resume_text = extract_text(filepath)
+                resume_text = extract_text(file)
                 # Ensure resume_text and jd are not None or empty before processing
                 if resume_text and jd:
                     summary = generate_summary(resume_text, jd)
                     results.append({
                         'filename': file.filename,
+                        'score': get_score(resume_text, jd),
                         'summary': summary
                     })
                 else:
                     # Handle empty resume_text or jd after extraction/input
                     results.append({
                         'filename': file.filename,
+                        'score': 10,
                         'summary': "Could not process resume or job description."
                     })
             else:
