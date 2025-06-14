@@ -13,6 +13,7 @@ This project is a Flask-based web application designed to analyze resumes agains
 3.  **Content Analysis**: Extracts and analyzes text from uploaded resumes.
 4.  **Output Generation**:
     *   **AI-Generated Summary**: Identifies key fit points and potential gaps using a Google Gemini model (e.g., gemini-pro).
+    *   **AI-Generated Score**
 5.  **Ranked Display**: Shows a list of resumes, ranked by their match score.
 
 ---
@@ -23,7 +24,6 @@ This project is a Flask-based web application designed to analyze resumes agains
 *   **Frontend**: HTML, CSS, Bootstrap
 *   **AI/NLP**:
     *   Google Gemini API (e.g., gemini-pro) for summary generation.
-    *   `nltk` for text preprocessing (tokenization, stopwords, lemmatization).
     *   `pdfplumber` for parsing PDF files.
     *   `docx2txt` for parsing DOCX files.
     *   (`spacy` is included in `requirements.txt` for potential future use).
@@ -42,7 +42,7 @@ resume-analyzer/
 │   └── styles.css        # Custom CSS styles
 ├── utils/
 │   ├── resume_parser.py  # Logic for extracting text from resumes
-│   └── llm_summary.py    # Logic for generating AI summaries
+│   └── llm_summary.py    # Logic for generating AI summaries and scores
 ├── uploads/              # Temporary storage for uploaded resumes (should be in .gitignore)
 ├── requirements.txt      # Python package dependencies
 └── README.md             # This file
@@ -66,12 +66,6 @@ resume-analyzer/
 3.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
-    ```
-    ```python
-    import nltk
-    nltk.download('stopwords')
-    nltk.download('wordnet')
-    nltk.download('punkt')
     ```
 
 4.  **Set up Google Gemini API Key:**
