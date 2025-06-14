@@ -7,6 +7,13 @@ body {
 
 .navbar {
     margin-bottom: 20px; /* Add some space below the navbar */
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 .card {
@@ -45,4 +52,19 @@ body {
     border: 1px solid #ced4da;
     padding: .375rem .75rem;
     border-radius: .25rem;
+}
+.summary-content ul {
+    padding-left: 20px;
+}
+.summary-content li {
+    margin-bottom: 8px;
+}
+.summary-content strong {
+    font-weight: bold;
+}
+.summary-content em {
+    font-style: italic;
+}
+.summary-content p {
+    margin-bottom: 12px;
 }

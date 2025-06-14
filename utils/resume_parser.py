@@ -17,8 +17,6 @@ def extract_text(file):
                         text += page_text + "\n" # Add newline for readability
         except Exception as e:
             print(f"Error processing PDF file {filename}: {e}")
-            # Optionally, re-raise the exception or return a specific error message
-            # raise e
             return f"Error: Could not extract text from PDF {filename}."
 
     elif file_extension.lower() == '.docx':

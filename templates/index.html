@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">AI Resume Analyzer & Scorer</a>
+        <ul class="navbar-nav flex-row ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="https://github.com/bshk57/AI-Resume-Analyser/" target="_blank"
+                    style="font-weight: bold;">BSHK</a>
+            </li>
+        </ul>
     </nav>
 
     <div class="container mt-5">
@@ -23,11 +31,13 @@
                         <form method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="job_description">Job Description</label>
-                                <textarea class="form-control" name="job_description" id="job_description" rows="8" placeholder="Paste the full job description here..." required></textarea>
+                                <textarea class="form-control" name="job_description" id="job_description" rows="8"
+                                    placeholder="Paste the full job description here..." required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="resumes">Upload Resumes (PDF or DOCX)</label>
-                                <input type="file" class="form-control-file" name="resumes" id="resumes" multiple required accept=".pdf,.docx">
+                                <input type="file" class="form-control-file" name="resumes" id="resumes" multiple
+                                    required accept=".pdf,.docx">
                                 <small class="form-text text-muted">You can select multiple files.</small>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Analyze Resumes</button>
@@ -51,7 +61,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">AI Generated Summary:</h6>
                         <div class="summary-content p-3 border rounded bg-white">
-                            {{ result.summary | nl2br | safe }}
+                            {{ result.summary | safe }}
                         </div>
                     </div>
                 </div>
@@ -67,7 +77,7 @@
 
     <footer class="footer mt-auto py-3 bg-light text-center">
         <div class="container">
-            <span class="text-muted">AI Resume Analyzer - Powered by Flask & GPT</span>
+            <span class="text-muted">AI Resume Analyzer - Powered by Flask & Google Gemini</span>
         </div>
     </footer>
 
@@ -75,4 +85,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

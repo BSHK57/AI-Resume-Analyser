@@ -5,6 +5,8 @@ from utils.resume_parser import extract_text
 import os
 import re # For a more robust nl2br
 import io
+import markdown
+from markupsafe import Markup
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads/'
@@ -38,7 +40,7 @@ def index():
                     results.append({
                         'filename': file.filename,
                         'score': get_score(resume_text, jd),
-                        'summary': summary
+                        'summary': Markup(markdown.markdown(summary))
                     })
                 else:
                     # Handle empty resume_text or jd after extraction/input
