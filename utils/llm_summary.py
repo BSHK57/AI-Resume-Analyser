@@ -71,9 +71,14 @@ def get_score(resume_text, jd_text, model_name="gemini-1.5-flash-latest"): # Def
     if not resume_text or not jd_text:
         return "Error: Resume text or Job Description text is missing. Cannot generate summary."
     prompt = f"""
-You are an expert HR assistant. Your task is to analyze a resume against a job description.
-Based on the provided job description and resume, please identify:
-how much percent of my resume is aligned with the job description
+You are an expert HR assistant and resume analyst.
+Your task is to evaluate how well the given resume aligns with the provided job description.
+Instructions:
+1. Carefully compare the resume content with the job description.
+2. Consider all relevant aspects such as technical skills, experience, education, tools, certifications, and keywords.
+3. Based on this analysis, calculate the percentage match between the resume and the job description.
+Format: Only return a single numerical value (without any percentage symbol), representing the alignment score as a decimal (e.g., 85.75).
+No explanation or extra text is required.
 Job Description:
 ---
 {jd_text}
@@ -83,7 +88,6 @@ Resume:
 ---
 {resume_text}
 ---
-Note : provide only the value in number no need of symbol.
 """
 
     try:
