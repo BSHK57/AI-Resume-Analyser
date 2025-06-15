@@ -83,7 +83,7 @@ Resume:
 ---
 {resume_text}
 ---
-Note : provide only the value in number 80 or 60 no need of symbol.
+Note : provide only the value in number no need of symbol.
 """
 
     try:
